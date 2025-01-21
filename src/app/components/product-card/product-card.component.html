@@ -1,0 +1,17 @@
+<div class="shadow p-3  rounded border-0 h-100 d-flex flex-column bg-white	">
+  <!-- Imagen del producto -->
+  <div class="flex-grow-1 d-flex align-items-center justify-content-center p-3 ">
+    <img src="{{ miProduct.image }}" class="img-fluid rounded " alt="Product Image">
+  </div>
+
+  <!-- Detalles del producto -->
+  <div class="card-body d-flex flex-column justify-content-end text-left ">
+    <h5 class="card-title fw-bold text-dark">{{ miProduct.name }}</h5>
+    <p class="card-text text-muted mt-1">{{ miProduct.description }}</p>
+    <p class="card-text text-muted">{{ miProduct.category }}</p>
+    <p class="fw-bold fs-5 text-secondary">{{ miProduct.price }} EUR</p>
+    <button class="btn btn-danger mt-3" (click)="onClickDelete()">
+  <i class="fas fa-trash"></i> Eliminar
+</button>
+  </div>
+</div>

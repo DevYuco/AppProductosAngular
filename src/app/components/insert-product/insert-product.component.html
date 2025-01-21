@@ -1,0 +1,31 @@
+<section class="container mt-3">
+  <form action="" [formGroup]="modelForm" (ngSubmit)="getDataForm()">
+
+      <div class="my-2">
+        <label for="name" class="form-label">Nombre del producto</label>
+        <input type="text" class="form-control mb-3" placeholder="Intruduce nombre del producto" id="name" formControlName="name">
+      </div>
+
+      <div class="my-2">
+        <label for="description" class="form-label">Descripcion del producto</label>
+        <input type="text" class="form-control mb-3" placeholder="Intruduce descripcion del producto" id="description" formControlName="description">
+      </div>
+
+      <div class="my-2">
+        <label for="price" class="form-label">Precio del producto</label>
+        <input type="number" class="form-control mb-3" placeholder="Intruduce precio del producto" id="price" formControlName="price">
+      </div>
+
+      <div class="my-2">
+        <label for="category" class="form-label">Categoria del producto</label>
+        <input type="text" class="form-control mb-3" placeholder="Intruduce categoria del producto" id="category" formControlName="category">
+      </div>
+
+      <div class="my-2">
+        <label for="image" class="form-label">Imagen del producto</label>
+        <input type="text" class="form-control mb-3" placeholder="Intruduce la url de la imagen del producto" id="image" formControlName="image">
+      </div>
+
+      <input type="submit"  value="Añadir producto" class="btn btn-secondary w-100">
+  </form>
+</section>
