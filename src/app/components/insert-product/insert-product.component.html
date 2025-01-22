@@ -1,31 +1,58 @@
 <section class="container mt-3">
-  <form action="" [formGroup]="modelForm" (ngSubmit)="getDataForm()">
+  <form action="" [formGroup]="modelForm" (ngSubmit)="getDataForm()" class="card p-3 shadow">
 
       <div class="my-2">
         <label for="name" class="form-label">Nombre del producto</label>
         <input type="text" class="form-control mb-3" placeholder="Intruduce nombre del producto" id="name" formControlName="name">
       </div>
+      @if(checkControl('name', 'required')){
+        <p class="error">Introduce el nombre</p>
+      }
+      @if(checkControl('name', 'minlength')){
+        <p class="error">Introduce un nombre valido</p>
+      }
 
       <div class="my-2">
         <label for="description" class="form-label">Descripcion del producto</label>
         <input type="text" class="form-control mb-3" placeholder="Intruduce descripcion del producto" id="description" formControlName="description">
       </div>
+      @if(checkControl('description', 'required')){
+        <p class="error">Introduce la descripcion</p>
+      }
+      @if(checkControl('description', 'minlength')){
+        <p class="error">Introduce una descripcion de mas de 10 caracteres</p>
+      }
 
       <div class="my-2">
         <label for="price" class="form-label">Precio del producto</label>
         <input type="number" class="form-control mb-3" placeholder="Intruduce precio del producto" id="price" formControlName="price">
       </div>
+      @if(checkControl('price', 'required')){
+        <p class="error">Introduce el precio</p>
+      }
+      @if(checkControl('price', 'min')){
+        <p class="error">El precio debe ser mayor que 0</p>
+      }
 
       <div class="my-2">
         <label for="category" class="form-label">Categoria del producto</label>
         <input type="text" class="form-control mb-3" placeholder="Intruduce categoria del producto" id="category" formControlName="category">
       </div>
+      @if(checkControl('category', 'required')){
+        <p class="error">Introduce la categoria</p>
+      }
 
       <div class="my-2">
         <label for="image" class="form-label">Imagen del producto</label>
         <input type="text" class="form-control mb-3" placeholder="Intruduce la url de la imagen del producto" id="image" formControlName="image">
       </div>
-
-      <input type="submit"  value="Añadir producto" class="btn btn-secondary w-100">
+      @if(checkControl('image', 'required')){
+        <p class="error">Introduce la url de la imagen</p>
+      }
+      @if(checkControl('image', 'pattern')){
+        <p class="error">Introduce una url valida http:// o https:// </p>
+      }
+      
+      <input type="submit"  value="Añadir producto" class="btn btn-secondary w-100" [disabled]="!modelForm.valid">
   </form>
 </section>

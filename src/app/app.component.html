@@ -1,13 +1,27 @@
-<header class="bg-dark text-white text-center py-3">
+<!--Cabecera-->
+<header class="bg-dark text-white text-center py-3 shadow">
   <h1>Angular Products App</h1>
 </header>
-<main class="container my4 bg-light">
+<!--Contenido-->
+<main class="container my-4 bg-light shadow rounded border-0 ">
+  <div class="mt-3 pt-3 ps-2 ">
+      <button class="btn btn-secondary mb-3 " (click)="insertFormVisible()">
+      {{isFormAltaVisible ? 'Ocultar Alta Producto' : 'Mostrar Alta Producto' }}
+    </button>
+  </div>
+
+@if(isFormAltaVisible){
+      <div class="mt-3">
+        <app-insert-product></app-insert-product>
+      </div>
+    }
+
   <app-product-list></app-product-list>
+
   <router-outlet></router-outlet>
 </main>
+<!--pie de pagina-->
 <footer class="bg-dark text-white text-center p-3 mt-3">
   <p>&copy; 2025 Angular Products App</p>
 </footer>
-<!--Dudas:
-          - Donde meter el component filter, y donde meter el component from de alta si dentro o fuera del list
-      -->
+

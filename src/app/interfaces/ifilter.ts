@@ -1,8 +1,8 @@
 export interface IFilter {
-  name: String;
-  description: String;
+  name: string;
+  description: string;
   minPrice: number;
   maxPrice: number;
-  category: String;
-  active: String;
+  category: string;
+  active: string;
 }
