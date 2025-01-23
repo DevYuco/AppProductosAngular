@@ -21,7 +21,7 @@ export class InsertProductComponent {
         this.modelForm = new FormGroup(
             {
                 name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
-                description: new FormControl(null, [Validators.required, Validators.minLength(10)]),
+                description: new FormControl(null, [Validators.required, Validators.minLength(15)]),
                 price: new FormControl(null, [Validators.required, Validators.min(0.1)]),
                 category: new FormControl(null, [Validators.required]),
                 image: new FormControl(null, [Validators.required, Validators.pattern(/^(https?:\/\/)[\w\-]+(\.[\w\-]{2,})+[/#?]?.*$/)]),

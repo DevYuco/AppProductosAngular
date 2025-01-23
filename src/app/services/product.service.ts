@@ -56,7 +56,7 @@ export class ProductService {
         });
         return arrProductsFilter;
     }
-    //Generamos un id único con esto algoritmo
+    //Generamos un id único con este algoritmo
     generateCustomId(): string {
         return Array.from(crypto.getRandomValues(new Uint8Array(12)))
             .map((byte) => byte.toString(16).padStart(2, "0"))
@@ -67,6 +67,7 @@ export class ProductService {
         const newId = this.generateCustomId();
 
         product._id = newId;
+        //Le pongo por defecto estado activo true ya que para mi es lo más lógico
         product.active = true;
 
         this.arrProducts.push(product);

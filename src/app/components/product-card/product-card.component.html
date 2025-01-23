@@ -10,7 +10,7 @@
     <p class="card-text text-muted mt-2">ID: {{ miProduct._id }}</p>
     <p class="card-text text-muted mt-1">{{ miProduct.description }}</p>
     <p class="card-text text-muted">{{ miProduct.category }}</p>
-    <p class="fw-bold fs-5 text-secondary">{{ miProduct.price }} EUR</p>
+    <p class="fw-bold fs-5 text-secondary">{{ miProduct.price }}{{moneda}}</p>
     <button class="btn btn-danger mt-3" (click)="onClickDelete()">
     Eliminar<img src="/icons/trash_bin_icon-icons.com_67981.png" width="16" height="16" alt="" class="ms-3 mb-1"> 
 </button>
